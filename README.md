@@ -16,7 +16,7 @@ Zde menší víčet Laravel featur z [dokumentace](https://laravel.com/docs).
 
         $ composer install
 
-2. Vytvořit .env soubor se správným nastavením - **predevším připojení k databázi**
+2. Vytvořit .env soubor (stačí přejmenovat .env.example) se správným nastavením - **predevším připojení k databázi**
 
         DB_CONNECTION=mysql
         DB_PORT=3306
@@ -24,7 +24,10 @@ Zde menší víčet Laravel featur z [dokumentace](https://laravel.com/docs).
         DB_USERNAME=root
         DB_PASSWORD=
 
-3. Nakonec spustit dev server
+3. Pro vytvoření správných tabulek v db stačí
+        
+        $ php artisan migrate:generate
+4. Nakonec spustit dev server
         
         $ php artisan serve
 
