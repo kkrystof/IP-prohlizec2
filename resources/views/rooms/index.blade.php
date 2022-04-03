@@ -10,8 +10,8 @@
 
 
     <div class="flex-left" style="align-items: center">
-        <div class="unit"><h1>Seznam zaměstnanců</h1></div>
-        <div class="unit-0" style="width:100px; margin: auto;"><a href={{url("/room/create")}} class="btn btn-primary">New</a>        </div>
+        <div class="unit"><h1>Seznam místností</h1></div>
+        <div class="unit-0" style="width:100px; margin: auto;"><a href={{url("/room/create")}} class="btn btn-primary" @if(!(Auth::user()->is_admin)) disabled @endif>New</a></div>
       </div>
 
     <table class="table">
@@ -41,11 +41,11 @@
                         </td>
                     @endforeach
                     <td>
-                        <a href={{url("/room/{$row->room_id}/edit")}} class="btn">Edit</a></td>
+                        <a href={{url("/room/{$row->room_id}/edit")}} class="btn" @if(!(Auth::user()->is_admin)) disabled @endif>Edit</a></td>
                     <td>
 
                         {{ Form::open(["url" => 'room/' . $row->room_id, 'method' => 'delete']) }}
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger" @if(!(Auth::user()->is_admin)) disabled @endif>Delete</button>
                         {{ Form::close() }}
 
                     </td>
@@ -57,14 +57,6 @@
     </table>
 
     
-jop
-    
-    dd(@admin)
-    @fuck
-
-    @auth
-        nic
-    @endauth
 
 
 

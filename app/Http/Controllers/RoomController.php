@@ -15,6 +15,8 @@ class RoomController extends Controller
     {
         $this->middleware('auth');
 
+        $this->middleware('admin')->except(['show', 'index']);
+
     }
 
     public function index(Request $request){

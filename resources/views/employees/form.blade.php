@@ -9,7 +9,7 @@
     {!! Form::text("wage", null, ["placeholder" => "Wage"]) !!}
 
 {{--    {!! Form::text("room", null, ["placeholder" => "His room"]) !!}--}}
-        {!! Form::select('room',  $room_categories, $room_id=  $employee->room ?? 1, ['class' => 'form-control']) !!}
+        {!! Form::select('room',  $room_categories, $room_id=  $employee->room_id ?? 1, ['class' => 'form-control']) !!}
 
 
         {!! Form::button("Submit", ["type" => "submit", "class" => "btn btn-primary"]) !!}

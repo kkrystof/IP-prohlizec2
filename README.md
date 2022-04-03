@@ -26,7 +26,7 @@ Zde menší víčet Laravel featur z [dokumentace](https://laravel.com/docs).
 
 3. Pro vytvoření správných tabulek v db stačí
         
-        $ php artisan migrate:generate
+        $ php artisan migrate:fresh
 4. Nakonec spustit dev server
         
         $ php artisan serve

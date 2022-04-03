@@ -15,6 +15,8 @@ class EmployeeController extends Controller
     {
         $this->middleware('auth');
 
+        $this->middleware('admin')->except(['show', 'index']);
+
     }
 
 

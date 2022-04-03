@@ -42,9 +42,5 @@ class Room extends Model
        public function getWageAvgAttribute()
    {
        return $this->employees->count() === 0 ? 0 : number_format(($this->employees->sum('wage')) / $this->employees->count()) . ',-';
-    // return 'shit';
-
-//        $this->attributes['room'] = Room::find($id)->name ?: '-';
-//        $this->attributes['room_id'] = $id;
    }
 }

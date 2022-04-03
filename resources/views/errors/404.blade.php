@@ -1,3 +1,14 @@
+
+
+@extends('master')
+@section('title', "Home")
+
+@section('content')
+
+
 <div>
-    <h1>-4004- :(</h1>
+    <h1>404 :(</h1>
 </div>
+
+
+@endsection

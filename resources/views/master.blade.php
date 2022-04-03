@@ -17,26 +17,27 @@
 
     </head>
     <body>
-                <div>
+                
+                <div style="display: flex; gap: 1rem">
                     @auth
+
                         <p>{{ Auth::user()->name }}</p>
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a href="{{ url('/') }}"> <- Home</a>
+
+                        <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                          {{ __('Logout') }}
-                     </a>
- 
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                         @csrf
-                     </form>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+                        @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        
+                        @endauth
+                    
                 </div>
 
             {{-- @guest

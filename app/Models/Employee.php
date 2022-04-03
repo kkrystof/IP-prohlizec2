@@ -44,10 +44,31 @@ class Employee extends Authenticatable
         return $this->login;
     }
 
+    
+    public function getRoomIdAttribute()
+    {
+      return $this->attributes['room'];
+    }
+
+    public function getRoomAttribute($id) {
+               return Room::find($id)->name ?: '-';
+    }
+
+    public function getIsAdminAttribute() {
+//        if(isset($this->admin)){}
+        return ($this->admin === 1)? true : false;
+    }
+
     public function setEmailAttribute($value)
     {
       $this->attributes['login'] = strtolower($value);
     }
+
+    public function getWageAttribute(){
+        return (($this->attributes['wage'] > 0)? number_format(($this->attributes['wage'])) : 0) . ',-';
+
+    }
+
 
 //     public function setPasswordAttribute($value)
 // {
