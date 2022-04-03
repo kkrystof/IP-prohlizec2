@@ -10,7 +10,7 @@ Zde menší víčet Laravel featur z [dokumentace](https://laravel.com/docs).
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
----
+
 ## Pokud se rozhodnete upravovat
 1. Po stažení souborů je potreba spustit
 
