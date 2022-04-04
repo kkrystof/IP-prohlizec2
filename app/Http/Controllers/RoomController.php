@@ -46,10 +46,20 @@ class RoomController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        Employee::destroy($id);
+//        $isEmpl = Employee::where('room',$id)->exists();
 
 
-        return redirect()->route('employee.index');
+        if(Employee::where('room',$id)->exists()){
+            return redirect()->route('room.index')->withErrors(['err' => 'Nelze odstranin! Nekteri zamestnanci maji tuto mistnost jako domovskou.']);
+        }
+
+
+            Room::destroy($id);
+            return redirect()->route('room.index');
+
+
+
+
     }
 
 

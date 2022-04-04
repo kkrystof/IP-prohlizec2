@@ -8,6 +8,11 @@
 
 <section class="container">
 
+    @error('err')
+    <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
 
     <div class="flex-left" style="align-items: center">
         <div class="unit"><h1>Seznam místností</h1></div>
@@ -56,7 +61,7 @@
         </tbody>
     </table>
 
-    
+
 
 
 
